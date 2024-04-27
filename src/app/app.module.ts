@@ -5,15 +5,22 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../../src/environments/environment';
 import { AuthModule } from '@auth0/auth0-angular';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule.forRoot(environment.auth)
+    AuthModule.forRoot(environment.auth),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent]
 })
