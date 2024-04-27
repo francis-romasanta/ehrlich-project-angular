@@ -1,30 +1,35 @@
-<div class="text-center">
-    <img src="{{user.picture}}" class="rounded-circle mb-2" alt="User Picture" style="width: 100px; height: 100px;">
-    <p>{{user.name}}</p>
-    <a href="https://github.com/{{user.nickname}}/" class="btn btn-primary">Github Profile</a>
-</div>
-<div class="searchContainer">
-    <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
-      <div class="input-wrapper">
-        <input type="text" name="searchForm" placeholder="Search..." [(ngModel)]="searchCity" required>
-        <button type="submit">Search</button>
-      </div>
-    </form>
-</div>
-<div class="mycontainer d-flex justify-content-center align-items-center m-0" *ngIf="weather">
-    <div class="card text-white bg-primary p-4" style="max-width: 18rem;">
-        <div class="card-header text-center">
-            <h2>{{searchCity}}</h2>
-            <img src="{{iconURL}}" alt="weather image">
-        </div>
-        <div class="card-body">
-            <p class="card-text">Summary: {{summary}}</p>
-            <!-- Using build-in angular pipe to round up the decimal number -->
-            <!-- https://angular.io/api/common/DecimalPipe -->
-            <p class="card-text">Temperature: {{temperature}} °'C'</p>
-            <p class="card-text">Feels like: {{feelsLikeTemp}} °'C'</p>
-            <p class="card-text">Pressure: {{pressure}} hPa</p>
-            <p class="card-text">Humidity: {{humidity}} %</p>
+<div class="homeContainer">
+    <div class="userContainer text-center">
+        <img src="{{user.picture}}" class="rounded-circle mb-2" alt="User Picture" style="width: 100px; height: 100px;">
+        <p>{{user.name}}</p>
+        <a href="https://github.com/{{user.nickname}}/" class="btn btn-primary">Github Profile</a>
+    </div>
+    <div class="searchContainer">
+        <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchInput.value)">
+            <div class="input-wrapper">
+              <input type="text" name="searchInput" placeholder="Enter city..." #searchInput>
+              <button type="submit" [disabled]="isSubmitting">
+                <span *ngIf="!isSubmitting">Search</span>
+                <span *ngIf="isSubmitting">Loading...</span>
+              </button>
+            </div>
+          </form>
+    </div>
+    <div class="cardContainer d-flex justify-content-center align-items-center mb-3" *ngIf="weather">
+        <div class="card text-white bg-primary p-4" style="max-width: 18rem;">
+            <div class="card-header text-center">
+                <h2>{{searchCity}}</h2>
+                <img src="{{iconURL}}" alt="weather image">
+            </div>
+            <div class="card-body">
+                <p class="card-text">Summary: {{summary}}</p>
+                <!-- Using build-in angular pipe to round up the decimal number -->
+                <!-- https://angular.io/api/common/DecimalPipe -->
+                <p class="card-text">Temperature: {{temperature}} °'C'</p>
+                <p class="card-text">Feels like: {{feelsLikeTemp}} °'C'</p>
+                <p class="card-text">Pressure: {{pressure}} hPa</p>
+                <p class="card-text">Humidity: {{humidity}} %</p>
+            </div>
         </div>
     </div>
 </div>
