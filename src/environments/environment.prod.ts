@@ -7,4 +7,5 @@ export const environment = {
       redirect_uri: 'https://francis-romasanta.github.io/ehrlich-project-angular/'
     }
   },
+  baseUrl: 'https://francis-romasanta.github.io/ehrlich-project-angular/'
 };

@@ -1,6 +1,6 @@
-import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'ehrlich-project';
   isLoggedIn: boolean;
 
-  constructor (public authService: AuthService, @Inject(DOCUMENT) private document: Document) {
+  constructor (public authService: AuthService) {
     this.isLoggedIn = false;
   }
   public ngOnInit(): void {
@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
     });
   }
   public logout(): void {
-    this.authService.logout({ logoutParams: { returnTo: this.document.location.origin } });
+    debugger;
+    this.authService.logout({ logoutParams: { returnTo: environment.baseUrl } });
   }
 }
