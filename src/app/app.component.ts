@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'ehrlich-project-angular';
+export class AppComponent implements OnInit {
+  title = 'ehrlich-project';
+  isLoggedIn: boolean;
+
+  constructor (public authService: AuthService) {
+    this.isLoggedIn = false;
+  }
+  public ngOnInit(): void {
+    this.authService.isAuthenticated$.subscribe((success: boolean) => {
+      this.isLoggedIn = success;
+    });
+  }
 }
