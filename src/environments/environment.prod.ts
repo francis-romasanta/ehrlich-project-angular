@@ -3,5 +3,8 @@ export const environment = {
   auth: {
     domain: "dev-zrzez42a5dwn7qrz.us.auth0.com",
     clientId: "zCgM59GfwMVFCMSh46b3RRuWfOHWYbRG",
+    authorizationParams: {
+      redirect_uri: 'http://localhost:4200'
+    }
   },
 };
