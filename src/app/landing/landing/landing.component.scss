@@ -1,0 +1,32 @@
+.landing-container {
+    background-image: url('../../../assets/weather-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    z-index: -1;
+
+    p {
+        color: white;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .larger-text {
+        font-size: 24px;
+        font-weight: 700;
+    }
+    
+    .text-container {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: 0 auto; 
+        text-align: center;
+    }
+}

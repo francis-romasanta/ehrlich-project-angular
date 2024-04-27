@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 export class AppComponent implements OnInit {
   title = 'ehrlich-project';
   isLoggedIn: boolean;
+  isNavBarCollapsed: boolean = false;
 
   constructor (public authService: AuthService) {
     this.isLoggedIn = false;
@@ -23,4 +24,7 @@ export class AppComponent implements OnInit {
     debugger;
     this.authService.logout({ logoutParams: { returnTo: environment.baseUrl } });
   }
+  public toggleNavbar() {
+    this.isNavBarCollapsed = !this.isNavBarCollapsed;
+}
 }
