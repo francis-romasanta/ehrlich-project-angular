@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
     });
   }
   public logout(): void {
-    debugger;
     this.authService.logout({ logoutParams: { returnTo: environment.baseUrl } });
   }
   public toggleNavbar() {
