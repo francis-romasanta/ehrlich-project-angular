@@ -13,7 +13,7 @@
           <a class="nav-link" href="/weather"><i class="bi bi-cloud-sun"></i> Weather</a>
         </li>
         <li *ngIf="authService.isAuthenticated$ | async; else loggedOut" class="nav-item rounded">
-          <button class="nav-link" (click)="authService.logout()"><i class="bi bi-person"></i> Log Out</button>
+          <button class="nav-link" (click)="logout()"><i class="bi bi-person"></i> Log Out</button>
         </li>
         <ng-template #loggedOut>
           <li *ngIf="!isLoggedIn" class="nav-item rounded">
