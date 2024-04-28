@@ -64,3 +64,32 @@
       }
     }
   }
+.cardContainer > .card {
+  background: rgba(0, 0, 0, 0.4);
+  max-width: 100%;
+}
+/* Mobile view styles */
+@media (max-width: 576px) {
+  .cardContainer {
+
+    .card {
+      flex-direction: row;
+      align-items: center;
+      .card-header {
+        h2 {
+          display: block;
+        }
+      }
+
+      .card-body {
+        p.card-text {
+          display: block;
+
+          &:not(:nth-child(2)) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
