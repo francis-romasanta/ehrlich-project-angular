@@ -1,6 +1,9 @@
 <section class="landing-container">
-    <div class="text-container">
+    <div class="text-container d-flex flex-column">
         <p class="larger-text">Welcome to Ehrlich's Weather Forecast Web Application.</p>
         <p>Please login with your Github user to use the application and view the weather in your city!</p>
+        <button class="nav-link" (click)="authService.loginWithRedirect({
+            appState: { target: '/home' }
+          })"><i class="bi bi-person"></i> Log in</button>
     </div>
 </section>

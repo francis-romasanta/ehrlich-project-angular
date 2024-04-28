@@ -10,7 +10,7 @@
     padding: 20px;
     z-index: -1;
 
-    p {
+    p, button {
         color: white;
         text-align: center;
         margin: 10px 0;
@@ -28,5 +28,27 @@
         max-width: 600px;
         margin-top: 8rem;
         text-align: center;
+
+        button {
+            display: none; /* Hide the button by default */
+            color: white;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+      
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.7);
+            }
+      
+            @media (max-width: 991px) {
+              display: inline-block; /* Show the button on small screen sizes */
+            }
+          }
     }
 }
