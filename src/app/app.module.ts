@@ -8,11 +8,13 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { LandingComponent } from './landing/landing/landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
